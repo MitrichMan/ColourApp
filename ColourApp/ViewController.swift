@@ -22,6 +22,8 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        changeViewColor()
+        
         redColorValueLabel.text = redColorSlider.value.formatted()
         greenColorValueLabel.text = greenColorSlider.value.formatted()
         blueColorValueLabel.text = blueColorSlider.value.formatted()
