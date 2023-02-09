@@ -23,11 +23,14 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         changeViewColor()
-        
-        redColorValueLabel.text = redColorSlider.value.formatted()
-        greenColorValueLabel.text = greenColorSlider.value.formatted()
-        blueColorValueLabel.text = blueColorSlider.value.formatted()
+        changeColorValueLabel()
     }
+    
+    @IBAction func sliderAction() {
+        changeViewColor()
+        changeColorValueLabel()
+    }
+    
     
     private func changeViewColor() {
         colorView.backgroundColor = UIColor(
@@ -38,20 +41,10 @@ final class ViewController: UIViewController {
         )
     }
     
-    @IBAction func redColorSliderAction() {
-        redColorValueLabel.text = (round(redColorSlider.value * 100) / 100).formatted()
-        changeViewColor()
+    private func changeColorValueLabel() {
+        redColorValueLabel.text = String(format: "%.2f", redColorSlider.value)
+        greenColorValueLabel.text = String(format: "%.2f", greenColorSlider.value)
+        blueColorValueLabel.text = String(format: "%.2f", blueColorSlider.value)
     }
-    
-    @IBAction func greenColorSliderAction() {
-        greenColorValueLabel.text = (round(greenColorSlider.value * 100) / 100).formatted()
-        changeViewColor()
-    }
-    
-    @IBAction func blueColorSliderAction() {
-        blueColorValueLabel.text = (round(blueColorSlider.value * 100) / 100).formatted()
-        changeViewColor()
-    }
-    
 }
 
