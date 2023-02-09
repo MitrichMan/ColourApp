@@ -100,22 +100,22 @@
                                                 <rect key="contentStretch" x="1" y="0.0" width="0.10000000000000001" height="1"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <connections>
-                                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="BAf-F4-pbf"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZXx-px-Zmb"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q9F-m2-Xcb">
-                                                <rect key="frame" x="-2" y="38" width="251" height="31"/>
+                                                <rect key="frame" x="-2" y="39" width="251" height="31"/>
                                                 <rect key="contentStretch" x="0.94999999999999996" y="0.0" width="1" height="1"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <connections>
-                                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="3kD-7i-Aod"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="inr-z1-F1d"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="spw-Au-D97">
-                                                <rect key="frame" x="-2" y="78" width="251" height="31"/>
+                                                <rect key="frame" x="-2" y="77" width="251" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <connections>
-                                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="oO3-jY-5nC"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="YaX-Ic-F4o"/>
                                                 </connections>
                                             </slider>
                                         </subviews>

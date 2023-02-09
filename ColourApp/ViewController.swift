@@ -23,15 +23,26 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         changeViewColor()
-        changeColorValueLabel()
+        changeColorValueLabel(
+            for: redColorValueLabel,
+            greenColorValueLabel,
+            blueColorValueLabel
+        )
+        
     }
     
-    @IBAction func sliderAction() {
+    @IBAction func sliderAction(_ sender: UISlider) {
         changeViewColor()
-        changeColorValueLabel()
+        switch sender {
+        case redColorSlider:
+            redColorValueLabel.text = string(from: sender)
+        case greenColorSlider:
+            greenColorValueLabel.text = string(from: sender)
+        default:
+            blueColorValueLabel.text = string(from: sender)
+        }
     }
-    
-    
+
     private func changeViewColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redColorSlider.value),
@@ -41,10 +52,24 @@ final class ViewController: UIViewController {
         )
     }
     
-    private func changeColorValueLabel() {
-        redColorValueLabel.text = String(format: "%.2f", redColorSlider.value)
-        greenColorValueLabel.text = String(format: "%.2f", greenColorSlider.value)
-        blueColorValueLabel.text = String(format: "%.2f", blueColorSlider.value)
+  
+    
+    private func changeColorValueLabel(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redColorValueLabel:
+                redColorValueLabel.text = string(from: redColorSlider)
+            case greenColorValueLabel:
+                greenColorValueLabel.text = string(from: greenColorSlider)
+            default:
+                blueColorValueLabel.text = string(from: blueColorSlider)
+                
+            }
+        }
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        return String(format: "%.2f", slider.value)
     }
 }
 
