@@ -10,18 +10,16 @@ import UIKit
 final class SettingsViewController: UIViewController {
     
     @IBOutlet var colorView: UIView!
-    
     @IBOutlet var colorSliders: [UISlider]!
-    
     @IBOutlet var valueLabels: [UILabel]!
-    
     @IBOutlet var valueTextFields: [UITextField]!
     
     var mainBackgroundColor: UIColor!
     
+    unowned var delegate: SettingsViewControllerDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         colorView.backgroundColor = mainBackgroundColor
         
         changeColorSlidersValue()
@@ -40,6 +38,8 @@ final class SettingsViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped() {
+        mainBackgroundColor = colorView.backgroundColor
+        delegate.setupColor(with: mainBackgroundColor)
         dismiss(animated: true)
     }
     
@@ -76,7 +76,6 @@ final class SettingsViewController: UIViewController {
     
     // MARK: - changeViewColor
     
-    
     private func changeViewColor() {
         var redValue: CGFloat = 0
         var greenValue: CGFloat = 0
@@ -101,7 +100,6 @@ final class SettingsViewController: UIViewController {
         )
     }
     
-    
     // MARK: - changeColorValueLabel
     private func changeValueLabel(for labels: [UILabel]) {
         for index in 0..<labels.count {
@@ -122,6 +120,7 @@ final class SettingsViewController: UIViewController {
     }
 }
 
+// MARK: - extension
 extension SettingsViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -161,4 +160,3 @@ extension SettingsViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
 }
-

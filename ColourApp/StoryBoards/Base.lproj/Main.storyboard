@@ -204,7 +204,8 @@
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="p5Y-KN-bgj">
-                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="av8-pW-VLE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="av8-pW-VLE">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="settingsButtonTapped:" destination="ojv-z4-Uoh" id="ilU-LS-2JI"/>
                             </connections>
