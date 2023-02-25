@@ -135,7 +135,7 @@ extension SettingsViewController: UITextFieldDelegate {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-    
+     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let number = Float(textField.text ?? ""), number >= 0 && number <= 1 else {
             showAlert(
