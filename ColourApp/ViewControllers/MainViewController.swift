@@ -12,12 +12,9 @@ protocol SettingsViewControllerDelegate: AnyObject {
 }
 
 class MainViewController: UIViewController {
-    
-    var backgroundColor = UIColor.systemBackground
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgroundColor()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,18 +26,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func settingsButtonTapped(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "goToSettings", sender: nil)
-    }
-    
-    private func setBackgroundColor() {
-        view.backgroundColor = backgroundColor
     }
 }
 
 // MARK: - SettingsViewControllerDelegate
 extension MainViewController: SettingsViewControllerDelegate {
     func setupColor(with color: UIColor) {
-        self.backgroundColor = color
-        setBackgroundColor()
+        view.backgroundColor = color
     }
 }
